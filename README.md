@@ -18,3 +18,16 @@ highlights the importance of architecture selection, feature engineering, and pr
 agricultural monitoring. The proposed methods provide a scalable, non-invasive solution for monitoring mowing events, supporting
 sustainable land management and compliance with agricultural policies. Future work will explore multimodal data integration and
 advanced training techniques to further enhance detection accuracy.
+
+---
+### Data Preparation
+The first step to train a model is to crop each of the parcels and keep them in the associated folder according to the number 
+of events. The final folder structure must be like the following:
+```
+data
+  |-- 0
+  |-- 1
+  |-- 2
+  |-- 3
+  |-- 4
+```
