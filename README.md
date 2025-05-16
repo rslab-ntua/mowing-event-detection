@@ -23,11 +23,11 @@ advanced training techniques to further enhance detection accuracy.
 ### Data Preparation
 The first step to train a model is to crop each of the parcels and keep them in the associated folder according to the number 
 of events. The final folder structure must be like the following:
-```
-data
-  |-- 0
-  |-- 1
-  |-- 2
-  |-- 3
-  |-- 4
+```bash
+└── data
+    ├── 0
+    ├── 1
+    ├── 2
+    ├── 3
+    └── 4
 ```
