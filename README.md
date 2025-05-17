@@ -23,7 +23,12 @@ advanced training techniques to further enhance detection accuracy.
 
 ### Harmonised Mowing Event Dataset
 
-The dataset developed for this study is publicly available and currently under continuous improvement. It can be downloaded from here.
+The dataset developed for this study is publicly available and currently under continuous improvement. This dataset consists of 3 areas in Greece in the 
+form of precomputed EVI timeseries and 3 geojson files which contain the number of mowing events.
+
+
+
+It can be downloaded from here.
 
 ---
 ### Data Preparation
