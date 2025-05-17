@@ -31,3 +31,60 @@ of events. The final folder structure must be like the following:
     ├── 3
     └── 4
 ```
+The proposed code to perform the above is the following:
+
+```python
+import fiona
+import rasterio
+import rasterio.mask
+import numpy as np
+import os
+import json
+from tqdm import tqdm
+
+
+# input folder for the timeseries data to crop
+input_folder = <folder for input ts>
+
+
+## export folder for the dataset##
+##each different class--> different folder##
+export_folder_path = <folder for output ts>
+
+INDEX_DESCRTPTION = '_full_hls'
+
+area_dict = {'17':[0,1,2,3,4]}
+
+
+for i,key in enumerate(area_dict):
+    print('area is',key)
+    values = area_dict[key]
+    print('values are',values)
+    for j,value in enumerate(values):
+        area = key
+        target_attribute_value = value
+        shapefile_path = f'./mowing_annotation_{area}.shp'
+
+        with fiona.open(shapefile_path, "r") as shapefile:
+            selected_shapes = [feature["geometry"] for feature in shapefile if feature["properties"]["count"] == target_attribute_value]
+            #print(selected_shapes)
+       
+        for k,shape in enumerate(selected_shapes):
+            with rasterio.open(input_folder+f'kampos_{area}_image_export{INDEX_DESCRTPTION}.tif') as src:
+                # Mask the raster based on the selected shapefile geometries
+                out_image, out_transform = rasterio.mask.mask(src, [shape], crop=True, nodata=np.nan)
+                out_meta = src.meta  # Get metadata from the source raster
+                
+            
+            out_meta.update({"driver": "GTiff",
+                             "height": out_image.shape[1],
+                             "width": out_image.shape[2],
+                             "transform": out_transform})
+            output_raster_path = export_folder_path+str(target_attribute_value)+'/'+str(i)+str(j)+str(k)+'.tif'
+            with rasterio.open(output_raster_path, "w", **out_meta) as dest:
+                dest.write(out_image)
+```
+
+---
+
+
