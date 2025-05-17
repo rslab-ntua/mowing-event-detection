@@ -20,6 +20,12 @@ sustainable land management and compliance with agricultural policies. Future wo
 advanced training techniques to further enhance detection accuracy.
 
 ---
+
+### Harmonised Mowing Event Dataset
+
+The dataset developed for this study is publicly available and currently under continuous improvement. It can be downloaded from here.
+
+---
 ### Data Preparation
 The first step to train a model is to crop each of the parcels and keep them in the associated folder according to the number 
 of events. The final folder structure must be like the following:
