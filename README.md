@@ -3,6 +3,11 @@
 
 ---
 
+:rocket: **Actively Maintained**  
+:test_tube: **Experimental code may be present**
+
+---
+
 #### Abstract
 The intensity of agricultural land use is a critical factor for food security and biodiversity preservation, necessitating effective
 and scalable monitoring techniques. This study presents a novel approach for large-scale mowing event frequency detection us-
