@@ -39,7 +39,7 @@ It can be downloaded from here.
 ### Data Preparation
 The first step to train a model is to crop each of the parcels and keep them in the associated folder according to the number 
 of events. The final folder structure must be like the following:
-```bash
+```
 └── data
     ├── 0
     ├── 1
@@ -100,7 +100,19 @@ for i,key in enumerate(area_dict):
             with rasterio.open(output_raster_path, "w", **out_meta) as dest:
                 dest.write(out_image)
 ```
+## Dataset download
+🗂️ Data is available from the paper's official [data upload](https://zenodo.org/records/15442875). 
+
+---
+### Environment preparation
+
+A requirements.txt file is provided to be used with conda. We recomment python>=3.10 and a fresh environment using the provided file. 
 
 ---
 
+### Training
+
+To train an MLP model which is the recomended for start, follow the main.ipynb
+
+---
 
