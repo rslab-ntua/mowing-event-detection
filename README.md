@@ -116,3 +116,9 @@ To train an MLP model which is the recomended for start, follow the main.ipynb
 
 ---
 
+### How to cite
+
+Moumouris, T., Tsironis, V., Psalta, A., and Karantzalos, K.: Large Scale Mowing Event Detection on Dense Time Series Data Using Deep Learning Methods and Knowledge Distillation, Int. Arch. Photogramm. Remote Sens. Spatial Inf. Sci., XLVIII-M-7-2025, 43–48, https://doi.org/10.5194/isprs-archives-XLVIII-M-7-2025-43-2025, 2025
+
+----
+
